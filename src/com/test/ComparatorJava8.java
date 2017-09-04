@@ -18,6 +18,7 @@ public class ComparatorJava8 {
 		//Comparator that accepts a generic function that will apply internally to comparator
 		//Removing the boilerPlate code
 		Comparator<Person> ageComparatorWithMR = Comparator.comparing(Person::getAge);
+		Comparator<Person> nameComparatorWithMR = Comparator.comparing(Person::getName);
 	}
 
 }
