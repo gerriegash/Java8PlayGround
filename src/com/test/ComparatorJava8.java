@@ -19,6 +19,8 @@ public class ComparatorJava8 {
 		//Removing the boilerPlate code
 		Comparator<Person> ageComparatorWithMR = Comparator.comparing(Person::getAge);
 		Comparator<Person> nameComparatorWithMR = Comparator.comparing(Person::getName);
+		
+		//Comparator that is flexible
+		Comparator<Person> flexibleComparatorWithMR = Comparator.comparing(Person::getLastName).thenComparing(Person::getAge).thenComparing(Person::getName);
 	}
-
 }
