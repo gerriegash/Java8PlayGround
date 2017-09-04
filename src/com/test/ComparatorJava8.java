@@ -15,11 +15,9 @@ public class ComparatorJava8 {
 		Comparator<Person> nameComparatorWithLambda = (p1,p2) -> p1.getName().compareTo(p1.getName());
 		Comparator<Person> lastNameComparatorWithLambda = (p1,p2) -> p1.getName().compareTo(p1.getName());
 		
-//		Comparator<Person> ageComparatorWithMR = Comparator.comparing(Person::getAge);
-////		Comparator<Person> nameComparatorWithMR = (p1,p2) -> p1.getName().compareTo(p1.getName());
-////		Comparator<Person> lastNameComparatorWithMR = (p1,p2) -> p1.getName().compareTo(p1.getName());
-		
-		
+		//Comparator that accepts a generic function that will apply internally to comparator
+		//Removing the boilerPlate code
+		Comparator<Person> ageComparatorWithMR = Comparator.comparing(Person::getAge);
 	}
 
 }
