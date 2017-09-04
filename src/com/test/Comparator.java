@@ -18,6 +18,7 @@ public interface Comparator<T> {
 		return (p1,p2) -> comparingFunction.apply(p1) - comparingFunction.apply(p2);
 	}
 	
-	
-
+	//Comparator that accepts a generic function that will apply internally to comparator
+	//Removing the boilerPlate code
+	Comparator<Person> ageComparatorWithMR = Comparator.comparing(Person::getAge);
 }
