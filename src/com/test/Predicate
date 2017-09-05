@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package com.sample;
+
+/**
+ * @author Gerry Hanjra
+ *
+ */
+public interface Predicate<T> {
+
+	public boolean test(T t);
+
+	public static <T> Predicate<T> equals(String string) {
+		return s -> s.equals(string);
+	}
+
+	public default Predicate<T> and(Predicate<T> anotherPredicate) {
+		return t -> test(t) && anotherPredicate.test(t);
+	}
+	
+	public default Predicate<T> or(Predicate<T> anotherPredicate) {
+		return t -> test(t) || anotherPredicate.test(t);
+	}
+}
