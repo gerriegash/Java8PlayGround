@@ -1,0 +1,17 @@
+package com.sample;
+
+public class OverridingPredicateJava8 {
+
+	public static void main(String... args) {
+			
+		Predicate<String> predicate = s-> s.length() < 20;
+		Predicate<String> anotherPredicate = s-> s.length() > 3;
+		Predicate<String> lovePredicate = s-> s.indexOf("love") !=-1;
+		
+		System.out.println(predicate.test("hello"));
+		System.out.println(Predicate.equals("Hello").test("Hello"));
+		System.out.println(predicate.and(anotherPredicate).and(lovePredicate).test("hellolove"));
+		
+	}
+
+}
